@@ -335,8 +335,8 @@ function centerAndFitTree() {
 }
 
 function openModal(nodeData) {
-  currentNodeForModal = nodeData;
   modal.innerHTML = getModalHtml();
+  currentNodeForModal = nodeData;
 
   const parentNode = findParentNode(root, nodeData.id);
   document.getElementById("add_parents_button").style.display =
@@ -359,7 +359,6 @@ function openModal(nodeData) {
     nodeData.lieu_naissance?.nom || "";
   document.getElementById("modal_p1_lieu_deces_nom").value =
     nodeData.lieu_deces?.nom || "";
-  // --- AJOUT DE CES 2 LIGNES POUR PARENT 1 ---
   document.getElementById("modal_p1_lieu_naissance_gps").value =
     nodeData.lieu_naissance?.gps || "";
   document.getElementById("modal_p1_lieu_deces_gps").value =
@@ -388,7 +387,6 @@ function openModal(nodeData) {
     p2.lieu_naissance?.nom || "";
   document.getElementById("modal_p2_lieu_deces_nom").value =
     p2.lieu_deces?.nom || "";
-  // --- AJOUT DE CES 2 LIGNES POUR PARENT 2 ---
   document.getElementById("modal_p2_lieu_naissance_gps").value =
     p2.lieu_naissance?.gps || "";
   document.getElementById("modal_p2_lieu_deces_gps").value =
@@ -403,8 +401,12 @@ function openModal(nodeData) {
   // Remplissage de la liste des enfants
   const childrenListDiv = document.getElementById("modal_children_list");
   childrenListDiv.innerHTML = "";
-  if (nodeData.children) {
-    nodeData.children.forEach((child) =>
+  // Gère les enfants visibles et cachés (pliés)
+  const childrenToShow =
+    nodeData.children ||
+    (nodeData._children ? nodeData._children.map((d) => d.data) : null);
+  if (childrenToShow) {
+    childrenToShow.forEach((child) =>
       childrenListDiv.appendChild(createChildListItem(child))
     );
   }
@@ -507,10 +509,56 @@ function addChildToModalList() {
   toggleChildDetails(childItem.querySelector(".child-header button"));
 }
 
+function swapParentData() {
+  const fieldsToSwap = [
+    "prenom",
+    "nom",
+    "naissance",
+    "deces",
+    "profession",
+    "evenement",
+    "infos",
+    "lieu_naissance_nom",
+    "lieu_naissance_gps",
+    "lieu_deces_nom",
+    "lieu_deces_gps",
+  ];
+
+  fieldsToSwap.forEach((field) => {
+    const p1_field = document.getElementById(`modal_p1_${field}`);
+    const p2_field = document.getElementById(`modal_p2_${field}`);
+    const tempValue = p1_field.value;
+    p1_field.value = p2_field.value;
+    p2_field.value = tempValue;
+  });
+
+  const p1_photo_preview = document.getElementById("modal_p1_photo_preview");
+  const p2_photo_preview = document.getElementById("modal_p2_photo_preview");
+  const p1_photo_input = document.getElementById("modal_p1_photo");
+  const p2_photo_input = document.getElementById("modal_p2_photo");
+
+  const tempSrc = p1_photo_preview.src;
+  p1_photo_preview.src = p2_photo_preview.src;
+  p2_photo_preview.src = tempSrc;
+
+  const tempCurrentPhoto = p1_photo_input.dataset.currentPhoto;
+  p1_photo_input.dataset.currentPhoto = p2_photo_input.dataset.currentPhoto;
+  p2_photo_input.dataset.currentPhoto = tempCurrentPhoto;
+
+  p1_photo_input.value = "";
+  p2_photo_input.value = "";
+}
+
 function saveAllChangesFromModal() {
   if (!currentNodeForModal) return;
 
   const originalNodeState = findNodeById(root, currentNodeForModal.id);
+  if (!originalNodeState) {
+    console.error(
+      "Erreur critique: Nœud original introuvable avant sauvegarde."
+    );
+    return;
+  }
   const sourcePos = { x: originalNodeState.x, y: originalNodeState.y };
 
   const formData = new FormData();
@@ -544,13 +592,10 @@ function saveAllChangesFromModal() {
     };
 
     if (fileInput && fileInput.files[0]) {
-      // --- NOUVELLE LOGIQUE DE NOM DE FICHIER (SIMPLE ET ROBUSTE) ---
       const file = fileInput.files[0];
-      // On récupère juste l'extension (ex: "jpg" ou "png")
       const extension = file.name.slice(
         ((file.name.lastIndexOf(".") - 1) >>> 0) + 2
       );
-      // On crée un nom de fichier simple et unique
       const newFileName = `${Date.now()}.${extension}`;
 
       personObject.photo = newFileName;
@@ -612,7 +657,6 @@ function saveAllChangesFromModal() {
 
       const fileInput = q("photo");
       if (fileInput && fileInput.files[0]) {
-        // --- ON APPLIQUE LA MÊME NOUVELLE LOGIQUE ICI ---
         const file = fileInput.files[0];
         const extension = file.name.slice(
           ((file.name.lastIndexOf(".") - 1) >>> 0) + 2
@@ -625,6 +669,11 @@ function saveAllChangesFromModal() {
       newChildrenArray.push(childData);
     });
   nodeInCopy.children = newChildrenArray.length > 0 ? newChildrenArray : null;
+  // Conserver les enfants cachés s'il n'y en avait pas dans le modal
+  if (newChildrenArray.length === 0 && currentNodeForModal._children) {
+    delete nodeInCopy.children;
+    nodeInCopy._children = currentNodeForModal._children;
+  }
 
   formData.append("jsonData", JSON.stringify(dataToSave));
 
@@ -724,7 +773,6 @@ function findNodeById(startNode, id) {
     }
     if (result) return;
     if (node.children) node.children.forEach(search);
-    if (result) return;
     if (node._children) node._children.forEach(search);
   }
   search(startNode);
@@ -943,40 +991,47 @@ function getModalHtml() {
   return `<div class="modal-content">
         <span class="modal-close" onclick="closeModal()">&times;</span>
         <h2>Éditeur de Famille</h2>
-        <div class="modal-parents-grid">
-            <fieldset>
-                <legend>Parent 1</legend>
-                <div class="photo-uploader">
-                    <img id="modal_p1_photo_preview" src="images/visu_parent_1.png" alt="Aperçu Parent 1" class="photo-preview"/>
-                    <input type="file" id="modal_p1_photo" accept="image/png, image/jpeg" onchange="previewImage(this, 'modal_p1_photo_preview')">
-                </div>
-                Prénom: <input type="text" id="modal_p1_prenom">
-                Nom: <input type="text" id="modal_p1_nom">
-                Naissance: <input type="date" id="modal_p1_naissance">
-                <div class="location-grid"><input type="text" id="modal_p1_lieu_naissance_nom" class="autocomplete-location" placeholder="Lieu de naissance"><input type="text" id="modal_p1_lieu_naissance_gps" placeholder="GPS lat,lon" readonly></div>
-                Décès: <input type="date" id="modal_p1_deces">
-                <div class="location-grid"><input type="text" id="modal_p1_lieu_deces_nom" class="autocomplete-location" placeholder="Lieu de décès"><input type="text" id="modal_p1_lieu_deces_gps" placeholder="GPS lat,lon" readonly></div>
-                Profession: <input type="text" id="modal_p1_profession">
-                Événement: <input type="text" id="modal_p1_evenement">
-                Infos: <input type="text" id="modal_p1_infos">
-            </fieldset>
-            <fieldset>
-                <legend>Parent 2 (Conjoint)</legend>
-                <div class="photo-uploader">
-                    <img id="modal_p2_photo_preview" src="images/visu_parent_2.png" alt="Aperçu Parent 2" class="photo-preview"/>
-                    <input type="file" id="modal_p2_photo" accept="image/png, image/jpeg" onchange="previewImage(this, 'modal_p2_photo_preview')">
-                </div>
-                Prénom: <input type="text" id="modal_p2_prenom">
-                Nom: <input type="text" id="modal_p2_nom">
-                Naissance: <input type="date" id="modal_p2_naissance">
-                <div class="location-grid"><input type="text" id="modal_p2_lieu_naissance_nom" class="autocomplete-location" placeholder="Lieu de naissance"><input type="text" id="modal_p2_lieu_naissance_gps" placeholder="GPS lat,lon" readonly></div>
-                Décès: <input type="date" id="modal_p2_deces">
-                <div class="location-grid"><input type="text" id="modal_p2_lieu_deces_nom" class="autocomplete-location" placeholder="Lieu de décès"><input type="text" id="modal_p2_lieu_deces_gps" placeholder="GPS lat,lon" readonly></div>
-                Profession: <input type="text" id="modal_p2_profession">
-                Événement: <input type="text" id="modal_p2_evenement">
-                Infos: <input type="text" id="modal_p2_infos">
-            </fieldset>
+
+        <div class="modal-parents-container">
+            <div class="modal-parents-grid">
+                <fieldset>
+                    <legend>Parent 1</legend>
+                    <div class="photo-uploader">
+                        <img id="modal_p1_photo_preview" src="images/visu_parent_1.png" alt="Aperçu Parent 1" class="photo-preview"/>
+                        <input type="file" id="modal_p1_photo" accept="image/png, image/jpeg" onchange="previewImage(this, 'modal_p1_photo_preview')">
+                    </div>
+                    Prénom: <input type="text" id="modal_p1_prenom">
+                    Nom: <input type="text" id="modal_p1_nom">
+                    Naissance: <input type="date" id="modal_p1_naissance">
+                    <div class="location-grid"><input type="text" id="modal_p1_lieu_naissance_nom" class="autocomplete-location" placeholder="Lieu de naissance"><input type="text" id="modal_p1_lieu_naissance_gps" placeholder="GPS lat,lon" readonly></div>
+                    Décès: <input type="date" id="modal_p1_deces">
+                    <div class="location-grid"><input type="text" id="modal_p1_lieu_deces_nom" class="autocomplete-location" placeholder="Lieu de décès"><input type="text" id="modal_p1_lieu_deces_gps" placeholder="GPS lat,lon" readonly></div>
+                    Profession: <input type="text" id="modal_p1_profession">
+                    Événement: <input type="text" id="modal_p1_evenement">
+                    Infos: <input type="text" id="modal_p1_infos">
+                </fieldset>
+                <fieldset>
+                    <legend>Parent 2 (Conjoint)</legend>
+                    <div class="photo-uploader">
+                        <img id="modal_p2_photo_preview" src="images/visu_parent_2.png" alt="Aperçu Parent 2" class="photo-preview"/>
+                        <input type="file" id="modal_p2_photo" accept="image/png, image/jpeg" onchange="previewImage(this, 'modal_p2_photo_preview')">
+                    </div>
+                    Prénom: <input type="text" id="modal_p2_prenom">
+                    Nom: <input type="text" id="modal_p2_nom">
+                    Naissance: <input type="date" id="modal_p2_naissance">
+                    <div class="location-grid"><input type="text" id="modal_p2_lieu_naissance_nom" class="autocomplete-location" placeholder="Lieu de naissance"><input type="text" id="modal_p2_lieu_naissance_gps" placeholder="GPS lat,lon" readonly></div>
+                    Décès: <input type="date" id="modal_p2_deces">
+                    <div class="location-grid"><input type="text" id="modal_p2_lieu_deces_nom" class="autocomplete-location" placeholder="Lieu de décès"><input type="text" id="modal_p2_lieu_deces_gps" placeholder="GPS lat,lon" readonly></div>
+                    Profession: <input type="text" id="modal_p2_profession">
+                    Événement: <input type="text" id="modal_p2_evenement">
+                    Infos: <input type="text" id="modal_p2_infos">
+                </fieldset>
+            </div>
+          <button type="button" class="swap-button" title="Intervertir Parent 1 et 2" onclick="swapParentData()">
+              &#x21C6; 
+          </button>
         </div>
+
         <hr>
         <fieldset>
             <legend>Enfants</legend>

@@ -1,106 +1,93 @@
 {
-    "id": 130,
-    "prenom": "Louis",
-    "nom": "Peyrebrune",
+    "id": 180,
+    "prenom": "vvv",
+    "nom": "",
     "children": [
         {
-            "id": 128,
-            "prenom": "François",
+            "id": 130,
+            "prenom": "Louis",
             "nom": "Peyrebrune",
-            "naissance": "2025-09-13",
-            "lieu_naissance": {
-                "nom": "Lissac-sur-Couze",
-                "gps": "45.1030, 1.4610"
-            },
-            "deces": "2025-09-28",
-            "lieu_deces": {
-                "nom": null,
-                "gps": null
-            },
-            "profession": "Agriculteur",
-            "evenement": null,
-            "infos": null,
             "children": [
                 {
-                    "id": 1,
-                    "prenom": "Franc",
+                    "id": 128,
+                    "prenom": "François",
                     "nom": "Peyrebrune",
-                    "naissance": "1900-01-01",
+                    "naissance": "2025-09-13",
                     "lieu_naissance": {
                         "nom": "Lissac-sur-Couze",
                         "gps": "45.1030, 1.4610"
                     },
-                    "deces": "1954-09-11",
+                    "deces": "2025-09-28",
                     "lieu_deces": {
-                        "nom": "Lissac-sur-Couze",
-                        "gps": "45.1030, 1.4610"
+                        "nom": null,
+                        "gps": null
                     },
-                    "profession": "Cultivateur",
+                    "profession": "Agriculteur",
                     "evenement": null,
                     "infos": null,
                     "children": [
                         {
-                            "id": 2,
-                            "prenom": "Clément",
+                            "id": 1,
+                            "prenom": "Franc",
                             "nom": "Peyrebrune",
-                            "naissance": "1932-01-01",
+                            "naissance": "1900-01-01",
                             "lieu_naissance": {
-                                "nom": "Froidefond-Bas",
-                                "gps": "45.1109, 1.4396"
+                                "nom": "Lissac-sur-Couze",
+                                "gps": "45.1030, 1.4610"
                             },
-                            "deces": "1989-09-12",
+                            "deces": "1954-09-11",
                             "lieu_deces": {
-                                "nom": "Chaillac-sur-Vienne",
-                                "gps": "45.8792, 0.8725"
+                                "nom": "Lissac-sur-Couze",
+                                "gps": "45.1030, 1.4610"
                             },
-                            "profession": "Papetier",
+                            "profession": "Cultivateur",
                             "evenement": null,
                             "infos": null,
                             "children": [
                                 {
-                                    "id": 105,
-                                    "prenom": "Dominique",
+                                    "id": 2,
+                                    "prenom": "Clément",
                                     "nom": "Peyrebrune",
-                                    "naissance": "1957-09-12",
+                                    "naissance": "1932-01-01",
                                     "lieu_naissance": {
-                                        "nom": "Brive-la-Gaillarde",
-                                        "gps": "45.1585, 1.5332"
+                                        "nom": "Froidefond-Bas",
+                                        "gps": "45.1109, 1.4396"
                                     },
-                                    "deces": null,
+                                    "deces": "1989-09-12",
                                     "lieu_deces": {
-                                        "nom": null,
-                                        "gps": null
+                                        "nom": "Chaillac-sur-Vienne",
+                                        "gps": "45.8792, 0.8725"
                                     },
-                                    "profession": "Fonctionnaire",
+                                    "profession": "Papetier",
                                     "evenement": null,
                                     "infos": null,
                                     "children": [
                                         {
-                                            "id": 108,
-                                            "prenom": "Amélie",
+                                            "id": 105,
+                                            "prenom": "Jean-Michel",
                                             "nom": "Estorges",
-                                            "naissance": "1989-09-12",
+                                            "naissance": "2025-09-02",
                                             "lieu_naissance": {
-                                                "nom": "Melun",
-                                                "gps": "48.5399, 2.6608"
+                                                "nom": "Tulle",
+                                                "gps": "45.2678, 1.7707"
                                             },
                                             "deces": null,
                                             "lieu_deces": {
                                                 "nom": null,
                                                 "gps": null
                                             },
-                                            "profession": "Chef de projet",
+                                            "profession": "RATP",
                                             "evenement": null,
                                             "infos": null,
                                             "children": [
                                                 {
-                                                    "id": 143,
-                                                    "prenom": "Maxime ",
+                                                    "id": 108,
+                                                    "prenom": "Romain",
                                                     "nom": "Gautier",
                                                     "naissance": "2025-09-25",
                                                     "lieu_naissance": {
-                                                        "nom": "Paris",
-                                                        "gps": "48.8589, 2.3200"
+                                                        "nom": "Bois-le-Roi",
+                                                        "gps": "48.4755, 2.6940"
                                                     },
                                                     "deces": null,
                                                     "lieu_deces": {
@@ -110,258 +97,155 @@
                                                     "profession": null,
                                                     "evenement": null,
                                                     "infos": null,
-                                                    "children": [],
-                                                    "spouse": null,
-                                                    "photo": "1757419367964.jpg"
+                                                    "children": [
+                                                        {
+                                                            "id": 143,
+                                                            "prenom": "Maxime ",
+                                                            "nom": "Gautier",
+                                                            "naissance": "2025-09-25",
+                                                            "lieu_naissance": {
+                                                                "nom": "Paris",
+                                                                "gps": "48.8589, 2.3200"
+                                                            },
+                                                            "deces": null,
+                                                            "lieu_deces": {
+                                                                "nom": null,
+                                                                "gps": null
+                                                            },
+                                                            "profession": null,
+                                                            "evenement": null,
+                                                            "infos": null,
+                                                            "children": [],
+                                                            "spouse": null,
+                                                            "photo": "1757419367964.jpg"
+                                                        }
+                                                    ],
+                                                    "spouse": {
+                                                        "id": 172,
+                                                        "prenom": "Amélie",
+                                                        "nom": "Estorges",
+                                                        "naissance": "1989-09-12",
+                                                        "deces": null,
+                                                        "profession": "Chef de projet",
+                                                        "evenement": null,
+                                                        "infos": null,
+                                                        "lieu_naissance": {
+                                                            "nom": "Melun",
+                                                            "gps": "48.5399, 2.6608"
+                                                        },
+                                                        "lieu_deces": {
+                                                            "nom": null,
+                                                            "gps": null
+                                                        },
+                                                        "photo": "1757419458969.jpg"
+                                                    },
+                                                    "photo": "1757536278795.png"
                                                 }
                                             ],
                                             "spouse": {
-                                                "id": 172,
-                                                "prenom": "Romain",
-                                                "nom": "Gautier",
-                                                "naissance": "2025-09-25",
+                                                "id": 164,
+                                                "prenom": "Dominique",
+                                                "nom": "Peyrebrune",
+                                                "naissance": "1957-09-12",
                                                 "deces": null,
-                                                "profession": null,
+                                                "profession": "Fonctionnaire",
                                                 "evenement": null,
                                                 "infos": null,
                                                 "lieu_naissance": {
-                                                    "nom": "Bois-le-Roi",
-                                                    "gps": "48.4755, 2.6940"
+                                                    "nom": "Brive-la-Gaillarde",
+                                                    "gps": "45.1585, 1.5332"
                                                 },
                                                 "lieu_deces": {
                                                     "nom": null,
                                                     "gps": null
                                                 },
-                                                "photo": "1757536278795.png"
+                                                "photo": "1757418843318.jpg"
                                             },
-                                            "photo": "1757419458969.jpg"
+                                            "photo": "1757418825199.jpg"
+                                        },
+                                        {
+                                            "id": 102,
+                                            "prenom": "Nicolas",
+                                            "nom": "Peyrebrune",
+                                            "naissance": "1975-09-12",
+                                            "lieu_naissance": {
+                                                "nom": "Saint-Junien",
+                                                "gps": "45.8872, 0.9011"
+                                            },
+                                            "deces": null,
+                                            "lieu_deces": {
+                                                "nom": null,
+                                                "gps": null
+                                            },
+                                            "profession": "Infographiste",
+                                            "evenement": null,
+                                            "infos": null,
+                                            "children": null,
+                                            "spouse": {
+                                                "id": 165,
+                                                "prenom": "Marielle",
+                                                "nom": "Dostes",
+                                                "naissance": "1980-09-17",
+                                                "deces": null,
+                                                "profession": "Service à la personne",
+                                                "evenement": null,
+                                                "infos": null,
+                                                "lieu_naissance": {
+                                                    "nom": "Auch",
+                                                    "gps": "43.6464, 0.5851"
+                                                },
+                                                "lieu_deces": {
+                                                    "nom": null,
+                                                    "gps": null
+                                                },
+                                                "photo": "1757419622440.jpg"
+                                            },
+                                            "photo": "1757419304219.JPG"
                                         }
                                     ],
                                     "spouse": {
-                                        "id": 164,
-                                        "prenom": "Jean-Michel",
-                                        "nom": "Estorges",
-                                        "naissance": "2025-09-02",
+                                        "id": 168,
+                                        "prenom": "Marie-Louise",
+                                        "nom": "Thomasson",
+                                        "naissance": "2025-09-19",
                                         "deces": null,
-                                        "profession": "RATP",
+                                        "profession": "Commerçante",
                                         "evenement": null,
                                         "infos": null,
                                         "lieu_naissance": {
-                                            "nom": "Tulle",
-                                            "gps": "45.2678, 1.7707"
+                                            "nom": "Gabillou",
+                                            "gps": "45.2058, 1.0344"
                                         },
                                         "lieu_deces": {
-                                            "nom": null,
-                                            "gps": null
+                                            "nom": "Brigueuil",
+                                            "gps": "45.9537, 0.8601"
                                         },
-                                        "photo": "1757418825199.jpg"
+                                        "photo": null
                                     },
-                                    "photo": "1757418843318.jpg"
-                                },
-                                {
-                                    "id": 102,
-                                    "prenom": "Nicolas",
-                                    "nom": "Peyrebrune",
-                                    "naissance": "1975-09-12",
-                                    "lieu_naissance": {
-                                        "nom": "Saint-Junien",
-                                        "gps": "45.8872, 0.9011"
-                                    },
-                                    "deces": null,
-                                    "lieu_deces": {
-                                        "nom": null,
-                                        "gps": null
-                                    },
-                                    "profession": "Infographiste",
-                                    "evenement": null,
-                                    "infos": null,
-                                    "children": [],
-                                    "spouse": {
-                                        "id": 165,
-                                        "prenom": "Marielle",
-                                        "nom": "Dostes",
-                                        "naissance": "1980-09-17",
-                                        "deces": null,
-                                        "profession": "Service à la personne",
-                                        "evenement": null,
-                                        "infos": null,
-                                        "lieu_naissance": {
-                                            "nom": "Auch",
-                                            "gps": "43.6464, 0.5851"
-                                        },
-                                        "lieu_deces": {
-                                            "nom": null,
-                                            "gps": null
-                                        },
-                                        "photo": "1757419622440.jpg"
-                                    },
-                                    "photo": "1757419304219.JPG"
-                                }
-                            ],
-                            "spouse": {
-                                "id": 168,
-                                "prenom": "Marie-Louise",
-                                "nom": "Thomasson",
-                                "naissance": "2025-09-19",
-                                "deces": null,
-                                "profession": "Commerçante",
-                                "evenement": null,
-                                "infos": null,
-                                "lieu_naissance": {
-                                    "nom": "Gabillou",
-                                    "gps": "45.2058, 1.0344"
-                                },
-                                "lieu_deces": {
-                                    "nom": "Brigueuil",
-                                    "gps": "45.9537, 0.8601"
-                                },
-                                "photo": null
-                            },
-                            "photo": null
-                        },
-                        {
-                            "id": 110,
-                            "prenom": "André",
-                            "nom": "Peyrebrune",
-                            "naissance": "2025-09-13",
-                            "lieu_naissance": {
-                                "nom": "Froidefond-Bas",
-                                "gps": "45.1109, 1.4396"
-                            },
-                            "deces": "2025-09-25",
-                            "lieu_deces": {
-                                "nom": "Brive-la-Gaillarde",
-                                "gps": "45.2433, 1.4568"
-                            },
-                            "profession": "Maçon",
-                            "evenement": null,
-                            "infos": null,
-                            "children": [
-                                {
-                                    "id": 115,
-                                    "prenom": "Christian",
-                                    "nom": "Peyrebrune",
-                                    "naissance": null,
-                                    "lieu_naissance": {
-                                        "nom": null,
-                                        "gps": null
-                                    },
-                                    "deces": null,
-                                    "lieu_deces": {
-                                        "nom": null,
-                                        "gps": null
-                                    },
-                                    "profession": null,
-                                    "evenement": null,
-                                    "infos": null,
-                                    "children": [],
-                                    "spouse": null,
                                     "photo": null
                                 },
                                 {
-                                    "id": 116,
-                                    "prenom": "Ghislaines",
+                                    "id": 110,
+                                    "prenom": "André",
                                     "nom": "Peyrebrune",
-                                    "naissance": "1962-06-20",
+                                    "naissance": "2025-09-13",
                                     "lieu_naissance": {
-                                        "nom": "Brive-la-Gaillarde",
-                                        "gps": "45.1585, 1.5332"
+                                        "nom": "Froidefond-Bas",
+                                        "gps": "45.1109, 1.4396"
                                     },
-                                    "deces": null,
+                                    "deces": "2025-09-25",
                                     "lieu_deces": {
-                                        "nom": null,
-                                        "gps": null
+                                        "nom": "Brive-la-Gaillarde",
+                                        "gps": "45.2433, 1.4568"
                                     },
-                                    "profession": null,
+                                    "profession": "Maçon",
                                     "evenement": null,
                                     "infos": null,
                                     "children": [
                                         {
-                                            "id": 149,
-                                            "prenom": "Gaetan",
-                                            "nom": "Villalonga",
-                                            "naissance": "1986-08-08",
-                                            "lieu_naissance": {
-                                                "nom": "Brive-la-Gaillarde",
-                                                "gps": "45.1585, 1.5332"
-                                            },
-                                            "deces": null,
-                                            "lieu_deces": {
-                                                "nom": null,
-                                                "gps": null
-                                            },
-                                            "profession": null,
-                                            "evenement": null,
-                                            "infos": null,
-                                            "children": [],
-                                            "spouse": null,
-                                            "photo": "1757536871726.png"
-                                        },
-                                        {
-                                            "id": 148,
-                                            "prenom": "Florian",
-                                            "nom": "Villalonga",
-                                            "naissance": null,
-                                            "lieu_naissance": {
-                                                "nom": "Brive-la-Gaillarde",
-                                                "gps": "45.1585, 1.5332"
-                                            },
-                                            "deces": null,
-                                            "lieu_deces": {
-                                                "nom": null,
-                                                "gps": null
-                                            },
-                                            "profession": null,
-                                            "evenement": null,
-                                            "infos": null,
-                                            "children": [],
-                                            "spouse": null,
-                                            "photo": "1757536612228.png"
-                                        }
-                                    ],
-                                    "spouse": {
-                                        "id": 175,
-                                        "prenom": "Bruno",
-                                        "nom": "Villalonga",
-                                        "naissance": "1961-09-09",
-                                        "deces": null,
-                                        "profession": null,
-                                        "evenement": null,
-                                        "infos": null,
-                                        "lieu_naissance": {
-                                            "nom": null,
-                                            "gps": null
-                                        },
-                                        "lieu_deces": {
-                                            "nom": null,
-                                            "gps": null
-                                        },
-                                        "photo": "1757526090237.png"
-                                    },
-                                    "photo": "1757536907393.png"
-                                },
-                                {
-                                    "id": 117,
-                                    "prenom": "Véronique",
-                                    "nom": "Peyrebrune",
-                                    "naissance": "1967-08-15",
-                                    "lieu_naissance": {
-                                        "nom": "Brive-la-Gaillarde",
-                                        "gps": "45.1585, 1.5332"
-                                    },
-                                    "deces": null,
-                                    "lieu_deces": {
-                                        "nom": null,
-                                        "gps": null
-                                    },
-                                    "profession": "Aide à la personne",
-                                    "evenement": null,
-                                    "infos": null,
-                                    "children": [
-                                        {
-                                            "id": 135,
-                                            "prenom": "Enfant 1",
-                                            "nom": "Pouget",
+                                            "id": 115,
+                                            "prenom": "Christian",
+                                            "nom": "Peyrebrune",
                                             "naissance": null,
                                             "lieu_naissance": {
                                                 "nom": null,
@@ -380,356 +264,13 @@
                                             "photo": null
                                         },
                                         {
-                                            "id": 136,
-                                            "prenom": "Enfant 2",
-                                            "nom": "Pouget",
-                                            "naissance": null,
+                                            "id": 116,
+                                            "prenom": "Bruno",
+                                            "nom": "Villalonga",
+                                            "naissance": "1961-09-09",
                                             "lieu_naissance": {
                                                 "nom": null,
                                                 "gps": null
-                                            },
-                                            "deces": null,
-                                            "lieu_deces": {
-                                                "nom": null,
-                                                "gps": null
-                                            },
-                                            "profession": null,
-                                            "evenement": null,
-                                            "infos": "ee",
-                                            "children": [],
-                                            "spouse": null,
-                                            "photo": null
-                                        }
-                                    ],
-                                    "spouse": {
-                                        "id": 174,
-                                        "prenom": "Christophe",
-                                        "nom": "Bourdet",
-                                        "naissance": "1963-12-26",
-                                        "deces": null,
-                                        "profession": null,
-                                        "evenement": null,
-                                        "infos": null,
-                                        "lieu_naissance": {
-                                            "nom": "Saint-Pantaléon-de-Larche",
-                                            "gps": "45.1413, 1.4457"
-                                        },
-                                        "lieu_deces": {
-                                            "nom": null,
-                                            "gps": null
-                                        },
-                                        "photo": "1757525619237.png"
-                                    },
-                                    "photo": null
-                                },
-                                {
-                                    "id": 118,
-                                    "prenom": "Marie-José",
-                                    "nom": "Peyrebrune",
-                                    "naissance": null,
-                                    "lieu_naissance": {
-                                        "nom": null,
-                                        "gps": null
-                                    },
-                                    "deces": null,
-                                    "lieu_deces": {
-                                        "nom": null,
-                                        "gps": null
-                                    },
-                                    "profession": null,
-                                    "evenement": null,
-                                    "infos": null,
-                                    "children": [
-                                        {
-                                            "id": 154,
-                                            "prenom": "Enfant 1",
-                                            "nom": "",
-                                            "naissance": null,
-                                            "lieu_naissance": {
-                                                "nom": null,
-                                                "gps": null
-                                            },
-                                            "deces": null,
-                                            "lieu_deces": {
-                                                "nom": null,
-                                                "gps": null
-                                            },
-                                            "profession": null,
-                                            "evenement": null,
-                                            "infos": null,
-                                            "children": []
-                                        },
-                                        {
-                                            "id": 155,
-                                            "prenom": "Enfant 2",
-                                            "nom": "",
-                                            "naissance": null,
-                                            "lieu_naissance": {
-                                                "nom": null,
-                                                "gps": null
-                                            },
-                                            "deces": null,
-                                            "lieu_deces": {
-                                                "nom": null,
-                                                "gps": null
-                                            },
-                                            "profession": null,
-                                            "evenement": null,
-                                            "infos": null,
-                                            "children": []
-                                        },
-                                        {
-                                            "id": 156,
-                                            "prenom": "Enfant 3",
-                                            "nom": null,
-                                            "naissance": null,
-                                            "lieu_naissance": {
-                                                "nom": "Lissac-sur-Couze",
-                                                "gps": "45.1030, 1.4610"
-                                            },
-                                            "deces": null,
-                                            "lieu_deces": {
-                                                "nom": null,
-                                                "gps": null
-                                            },
-                                            "profession": null,
-                                            "evenement": null,
-                                            "infos": null,
-                                            "children": null
-                                        }
-                                    ],
-                                    "spouse": null,
-                                    "photo": null
-                                },
-                                {
-                                    "id": 119,
-                                    "prenom": "Laurent",
-                                    "nom": "Peyrebrune",
-                                    "naissance": null,
-                                    "lieu_naissance": {
-                                        "nom": null,
-                                        "gps": null
-                                    },
-                                    "deces": null,
-                                    "lieu_deces": {
-                                        "nom": null,
-                                        "gps": null
-                                    },
-                                    "profession": null,
-                                    "evenement": null,
-                                    "infos": null,
-                                    "children": [
-                                        {
-                                            "id": 157,
-                                            "prenom": "Enfant 1",
-                                            "nom": "",
-                                            "naissance": null,
-                                            "lieu_naissance": {
-                                                "nom": null,
-                                                "gps": null
-                                            },
-                                            "deces": null,
-                                            "lieu_deces": {
-                                                "nom": null,
-                                                "gps": null
-                                            },
-                                            "profession": null,
-                                            "evenement": null,
-                                            "infos": null,
-                                            "children": []
-                                        },
-                                        {
-                                            "id": 158,
-                                            "prenom": "Enfant 2",
-                                            "nom": "",
-                                            "naissance": null,
-                                            "lieu_naissance": {
-                                                "nom": null,
-                                                "gps": null
-                                            },
-                                            "deces": null,
-                                            "lieu_deces": {
-                                                "nom": null,
-                                                "gps": null
-                                            },
-                                            "profession": null,
-                                            "evenement": null,
-                                            "infos": null,
-                                            "children": []
-                                        }
-                                    ],
-                                    "spouse": null,
-                                    "photo": null
-                                }
-                            ],
-                            "spouse": {
-                                "id": 169,
-                                "prenom": "Madeleine",
-                                "nom": "xxxxx",
-                                "naissance": "2025-09-18",
-                                "deces": null,
-                                "profession": "Sans profession",
-                                "evenement": null,
-                                "infos": null,
-                                "lieu_naissance": {
-                                    "nom": "Brive-la-Gaillarde",
-                                    "gps": "45.1585, 1.5332"
-                                },
-                                "lieu_deces": {
-                                    "nom": null,
-                                    "gps": null
-                                },
-                                "photo": null
-                            },
-                            "photo": null
-                        },
-                        {
-                            "id": 111,
-                            "prenom": "René",
-                            "nom": "Peyrebrune",
-                            "naissance": "2025-10-02",
-                            "lieu_naissance": {
-                                "nom": "Froidefond-Bas",
-                                "gps": "45.1109, 1.4396"
-                            },
-                            "deces": "2025-10-05",
-                            "lieu_deces": {
-                                "nom": "Froidefond-Bas",
-                                "gps": "45.1109, 1.4396"
-                            },
-                            "profession": "Agriculteur",
-                            "evenement": null,
-                            "infos": null,
-                            "children": [
-                                {
-                                    "id": 120,
-                                    "prenom": "Michel",
-                                    "nom": "Peyrebrune",
-                                    "naissance": null,
-                                    "lieu_naissance": {
-                                        "nom": null,
-                                        "gps": null
-                                    },
-                                    "deces": null,
-                                    "lieu_deces": {
-                                        "nom": null,
-                                        "gps": null
-                                    },
-                                    "profession": null,
-                                    "evenement": null,
-                                    "infos": null,
-                                    "children": [],
-                                    "spouse": null,
-                                    "photo": null
-                                },
-                                {
-                                    "id": 121,
-                                    "prenom": "Pascal",
-                                    "nom": "Peyrebrune",
-                                    "naissance": null,
-                                    "lieu_naissance": {
-                                        "nom": null,
-                                        "gps": null
-                                    },
-                                    "deces": null,
-                                    "lieu_deces": {
-                                        "nom": null,
-                                        "gps": null
-                                    },
-                                    "profession": null,
-                                    "evenement": null,
-                                    "infos": null,
-                                    "children": [],
-                                    "spouse": null,
-                                    "photo": null
-                                },
-                                {
-                                    "id": 122,
-                                    "prenom": "Patrice",
-                                    "nom": "Peyrebrune",
-                                    "naissance": null,
-                                    "lieu_naissance": {
-                                        "nom": null,
-                                        "gps": null
-                                    },
-                                    "deces": null,
-                                    "lieu_deces": {
-                                        "nom": null,
-                                        "gps": null
-                                    },
-                                    "profession": null,
-                                    "evenement": null,
-                                    "infos": null,
-                                    "children": [],
-                                    "spouse": null,
-                                    "photo": null
-                                }
-                            ],
-                            "spouse": {
-                                "id": 170,
-                                "prenom": "Odette",
-                                "nom": "xxx",
-                                "naissance": "2025-09-10",
-                                "deces": null,
-                                "profession": "Femme au foyer",
-                                "evenement": null,
-                                "infos": null,
-                                "lieu_naissance": {
-                                    "nom": null,
-                                    "gps": null
-                                },
-                                "lieu_deces": {
-                                    "nom": null,
-                                    "gps": null
-                                },
-                                "photo": null
-                            },
-                            "photo": null
-                        },
-                        {
-                            "id": 112,
-                            "prenom": "Roger",
-                            "nom": "Peyrebrune",
-                            "naissance": "2025-09-20",
-                            "lieu_naissance": {
-                                "nom": "Froidefond-Bas",
-                                "gps": "45.1109, 1.4396"
-                            },
-                            "deces": "2025-09-19",
-                            "lieu_deces": {
-                                "nom": "Brive-la-Gaillarde",
-                                "gps": null
-                            },
-                            "profession": "Ouvrier",
-                            "evenement": null,
-                            "infos": null,
-                            "children": [
-                                {
-                                    "id": 123,
-                                    "prenom": "Muriel",
-                                    "nom": "Peyrebrune",
-                                    "naissance": "1965-05-31",
-                                    "lieu_naissance": {
-                                        "nom": "Brive-la-Gaillarde",
-                                        "gps": "45.1585, 1.5332"
-                                    },
-                                    "deces": null,
-                                    "lieu_deces": {
-                                        "nom": null,
-                                        "gps": null
-                                    },
-                                    "profession": "Aide soignante",
-                                    "evenement": null,
-                                    "infos": null,
-                                    "children": [
-                                        {
-                                            "id": 147,
-                                            "prenom": "Yohan",
-                                            "nom": null,
-                                            "naissance": "1984-07-27",
-                                            "lieu_naissance": {
-                                                "nom": "Froidefond-Bas",
-                                                "gps": "45.1109, 1.4396"
                                             },
                                             "deces": null,
                                             "lieu_deces": {
@@ -741,13 +282,13 @@
                                             "infos": null,
                                             "children": [
                                                 {
-                                                    "id": 152,
-                                                    "prenom": "Enfant 1",
-                                                    "nom": "",
-                                                    "naissance": null,
+                                                    "id": 149,
+                                                    "prenom": "Gaetan",
+                                                    "nom": "Villalonga",
+                                                    "naissance": "1986-08-08",
                                                     "lieu_naissance": {
-                                                        "nom": null,
-                                                        "gps": null
+                                                        "nom": "Brive-la-Gaillarde",
+                                                        "gps": "45.1585, 1.5332"
                                                     },
                                                     "deces": null,
                                                     "lieu_deces": {
@@ -759,40 +300,59 @@
                                                     "infos": null,
                                                     "children": [],
                                                     "spouse": null,
-                                                    "photo": null
+                                                    "photo": "1757536871726.png"
+                                                },
+                                                {
+                                                    "id": 148,
+                                                    "prenom": "Florian",
+                                                    "nom": "Villalonga",
+                                                    "naissance": null,
+                                                    "lieu_naissance": {
+                                                        "nom": "Brive-la-Gaillarde",
+                                                        "gps": "45.1585, 1.5332"
+                                                    },
+                                                    "deces": null,
+                                                    "lieu_deces": {
+                                                        "nom": null,
+                                                        "gps": null
+                                                    },
+                                                    "profession": null,
+                                                    "evenement": null,
+                                                    "infos": null,
+                                                    "children": [],
+                                                    "spouse": null,
+                                                    "photo": "1757536612228.png"
                                                 }
                                             ],
-                                            "photo": "1757524712724.png"
+                                            "spouse": {
+                                                "id": 175,
+                                                "prenom": "Ghislaines",
+                                                "nom": "Peyrebrune",
+                                                "naissance": "1962-06-20",
+                                                "deces": null,
+                                                "profession": null,
+                                                "evenement": null,
+                                                "infos": null,
+                                                "lieu_naissance": {
+                                                    "nom": "Brive-la-Gaillarde",
+                                                    "gps": "45.1585, 1.5332"
+                                                },
+                                                "lieu_deces": {
+                                                    "nom": null,
+                                                    "gps": null
+                                                },
+                                                "photo": "1757536907393.png"
+                                            },
+                                            "photo": "1757526090237.png"
                                         },
                                         {
-                                            "id": 144,
-                                            "prenom": "Romain",
-                                            "nom": "Marchat",
-                                            "naissance": "1990-02-23",
+                                            "id": 117,
+                                            "prenom": "Christophe",
+                                            "nom": "Bourdet",
+                                            "naissance": "1963-12-26",
                                             "lieu_naissance": {
-                                                "nom": null,
-                                                "gps": null
-                                            },
-                                            "deces": null,
-                                            "lieu_deces": {
-                                                "nom": null,
-                                                "gps": null
-                                            },
-                                            "profession": null,
-                                            "evenement": null,
-                                            "infos": null,
-                                            "children": [],
-                                            "spouse": null,
-                                            "photo": "1757524442608.png"
-                                        },
-                                        {
-                                            "id": 145,
-                                            "prenom": "Manon",
-                                            "nom": "Marchat",
-                                            "naissance": null,
-                                            "lieu_naissance": {
-                                                "nom": null,
-                                                "gps": null
+                                                "nom": "Saint-Pantaléon-de-Larche",
+                                                "gps": "45.1413, 1.4457"
                                             },
                                             "deces": null,
                                             "lieu_deces": {
@@ -804,9 +364,9 @@
                                             "infos": null,
                                             "children": [
                                                 {
-                                                    "id": 151,
+                                                    "id": 135,
                                                     "prenom": "Enfant 1",
-                                                    "nom": "",
+                                                    "nom": "Pouget",
                                                     "naissance": null,
                                                     "lieu_naissance": {
                                                         "nom": null,
@@ -825,7 +385,87 @@
                                                     "photo": null
                                                 },
                                                 {
-                                                    "id": 153,
+                                                    "id": 136,
+                                                    "prenom": "Enfant 2",
+                                                    "nom": "Pouget",
+                                                    "naissance": null,
+                                                    "lieu_naissance": {
+                                                        "nom": null,
+                                                        "gps": null
+                                                    },
+                                                    "deces": null,
+                                                    "lieu_deces": {
+                                                        "nom": null,
+                                                        "gps": null
+                                                    },
+                                                    "profession": null,
+                                                    "evenement": null,
+                                                    "infos": "ee",
+                                                    "children": [],
+                                                    "spouse": null,
+                                                    "photo": null
+                                                }
+                                            ],
+                                            "spouse": {
+                                                "id": 174,
+                                                "prenom": "Véronique",
+                                                "nom": "Peyrebrune",
+                                                "naissance": "1967-08-15",
+                                                "deces": null,
+                                                "profession": "Aide à la personne",
+                                                "evenement": null,
+                                                "infos": null,
+                                                "lieu_naissance": {
+                                                    "nom": "Brive-la-Gaillarde",
+                                                    "gps": "45.1585, 1.5332"
+                                                },
+                                                "lieu_deces": {
+                                                    "nom": null,
+                                                    "gps": null
+                                                },
+                                                "photo": null
+                                            },
+                                            "photo": "1757525619237.png"
+                                        },
+                                        {
+                                            "id": 118,
+                                            "prenom": "Marie-José",
+                                            "nom": "Peyrebrune",
+                                            "naissance": null,
+                                            "lieu_naissance": {
+                                                "nom": null,
+                                                "gps": null
+                                            },
+                                            "deces": null,
+                                            "lieu_deces": {
+                                                "nom": null,
+                                                "gps": null
+                                            },
+                                            "profession": null,
+                                            "evenement": null,
+                                            "infos": null,
+                                            "children": [
+                                                {
+                                                    "id": 154,
+                                                    "prenom": "Enfant 1",
+                                                    "nom": "",
+                                                    "naissance": null,
+                                                    "lieu_naissance": {
+                                                        "nom": null,
+                                                        "gps": null
+                                                    },
+                                                    "deces": null,
+                                                    "lieu_deces": {
+                                                        "nom": null,
+                                                        "gps": null
+                                                    },
+                                                    "profession": null,
+                                                    "evenement": null,
+                                                    "infos": null,
+                                                    "children": []
+                                                },
+                                                {
+                                                    "id": 155,
                                                     "prenom": "Enfant 2",
                                                     "nom": "",
                                                     "naissance": null,
@@ -841,19 +481,198 @@
                                                     "profession": null,
                                                     "evenement": null,
                                                     "infos": null,
-                                                    "children": [],
-                                                    "spouse": null,
-                                                    "photo": null
+                                                    "children": []
+                                                },
+                                                {
+                                                    "id": 156,
+                                                    "prenom": "Enfant 3",
+                                                    "nom": null,
+                                                    "naissance": null,
+                                                    "lieu_naissance": {
+                                                        "nom": "Lissac-sur-Couze",
+                                                        "gps": "45.1030, 1.4610"
+                                                    },
+                                                    "deces": null,
+                                                    "lieu_deces": {
+                                                        "nom": null,
+                                                        "gps": null
+                                                    },
+                                                    "profession": null,
+                                                    "evenement": null,
+                                                    "infos": null,
+                                                    "children": null
                                                 }
                                             ],
                                             "spouse": null,
                                             "photo": null
                                         },
                                         {
-                                            "id": 146,
-                                            "prenom": "Benjamin",
-                                            "nom": "Marchat",
-                                            "naissance": "1991-12-05",
+                                            "id": 119,
+                                            "prenom": "Laurent",
+                                            "nom": "Peyrebrune",
+                                            "naissance": null,
+                                            "lieu_naissance": {
+                                                "nom": null,
+                                                "gps": null
+                                            },
+                                            "deces": null,
+                                            "lieu_deces": {
+                                                "nom": null,
+                                                "gps": null
+                                            },
+                                            "profession": null,
+                                            "evenement": null,
+                                            "infos": null,
+                                            "children": [
+                                                {
+                                                    "id": 157,
+                                                    "prenom": "Enfant 1",
+                                                    "nom": "",
+                                                    "naissance": null,
+                                                    "lieu_naissance": {
+                                                        "nom": null,
+                                                        "gps": null
+                                                    },
+                                                    "deces": null,
+                                                    "lieu_deces": {
+                                                        "nom": null,
+                                                        "gps": null
+                                                    },
+                                                    "profession": null,
+                                                    "evenement": null,
+                                                    "infos": null,
+                                                    "children": []
+                                                },
+                                                {
+                                                    "id": 158,
+                                                    "prenom": "Enfant 2",
+                                                    "nom": "",
+                                                    "naissance": null,
+                                                    "lieu_naissance": {
+                                                        "nom": null,
+                                                        "gps": null
+                                                    },
+                                                    "deces": null,
+                                                    "lieu_deces": {
+                                                        "nom": null,
+                                                        "gps": null
+                                                    },
+                                                    "profession": null,
+                                                    "evenement": null,
+                                                    "infos": null,
+                                                    "children": []
+                                                }
+                                            ],
+                                            "spouse": null,
+                                            "photo": null
+                                        }
+                                    ],
+                                    "spouse": {
+                                        "id": 169,
+                                        "prenom": "Madeleine",
+                                        "nom": "xxxxx",
+                                        "naissance": "2025-09-18",
+                                        "deces": null,
+                                        "profession": "Sans profession",
+                                        "evenement": null,
+                                        "infos": null,
+                                        "lieu_naissance": {
+                                            "nom": "Brive-la-Gaillarde",
+                                            "gps": "45.1585, 1.5332"
+                                        },
+                                        "lieu_deces": {
+                                            "nom": null,
+                                            "gps": null
+                                        },
+                                        "photo": null
+                                    },
+                                    "photo": null
+                                },
+                                {
+                                    "id": 111,
+                                    "prenom": "René",
+                                    "nom": "Peyrebrune",
+                                    "naissance": "2025-10-02",
+                                    "lieu_naissance": {
+                                        "nom": "Froidefond-Bas",
+                                        "gps": "45.1109, 1.4396"
+                                    },
+                                    "deces": "2025-10-05",
+                                    "lieu_deces": {
+                                        "nom": "Froidefond-Bas",
+                                        "gps": "45.1109, 1.4396"
+                                    },
+                                    "profession": "Agriculteur",
+                                    "evenement": null,
+                                    "infos": null,
+                                    "children": [
+                                        {
+                                            "id": 120,
+                                            "prenom": "Michel",
+                                            "nom": "Peyrebrune",
+                                            "naissance": null,
+                                            "lieu_naissance": {
+                                                "nom": null,
+                                                "gps": null
+                                            },
+                                            "deces": null,
+                                            "lieu_deces": {
+                                                "nom": null,
+                                                "gps": null
+                                            },
+                                            "profession": null,
+                                            "evenement": null,
+                                            "infos": null,
+                                            "children": [
+                                                {
+                                                    "id": 176,
+                                                    "prenom": "Enfant 1",
+                                                    "nom": "",
+                                                    "naissance": null,
+                                                    "lieu_naissance": {
+                                                        "nom": null,
+                                                        "gps": null
+                                                    },
+                                                    "deces": null,
+                                                    "lieu_deces": {
+                                                        "nom": null,
+                                                        "gps": null
+                                                    },
+                                                    "profession": null,
+                                                    "evenement": null,
+                                                    "infos": null,
+                                                    "children": [],
+                                                    "spouse": null,
+                                                    "photo": null
+                                                }
+                                            ],
+                                            "photo": null
+                                        },
+                                        {
+                                            "id": 121,
+                                            "prenom": "Pascal",
+                                            "nom": "Peyrebrune",
+                                            "naissance": null,
+                                            "lieu_naissance": {
+                                                "nom": null,
+                                                "gps": null
+                                            },
+                                            "deces": null,
+                                            "lieu_deces": {
+                                                "nom": null,
+                                                "gps": null
+                                            },
+                                            "profession": null,
+                                            "evenement": null,
+                                            "infos": null,
+                                            "children": null,
+                                            "photo": null
+                                        },
+                                        {
+                                            "id": 122,
+                                            "prenom": "Patrice",
+                                            "nom": "Peyrebrune",
+                                            "naissance": null,
                                             "lieu_naissance": {
                                                 "nom": null,
                                                 "gps": null
@@ -868,16 +687,245 @@
                                             "infos": null,
                                             "children": [],
                                             "spouse": null,
-                                            "photo": "1757524302061.png"
+                                            "photo": null
                                         }
                                     ],
                                     "spouse": {
-                                        "id": 173,
-                                        "prenom": "Laurent",
-                                        "nom": "Marchat",
-                                        "naissance": "1967-08-19",
-                                        "deces": "2025-09-03",
-                                        "profession": "Mécanicien",
+                                        "id": 170,
+                                        "prenom": "Odette",
+                                        "nom": "xxx",
+                                        "naissance": "2025-09-10",
+                                        "deces": null,
+                                        "profession": "Femme au foyer",
+                                        "evenement": null,
+                                        "infos": null,
+                                        "lieu_naissance": {
+                                            "nom": null,
+                                            "gps": null
+                                        },
+                                        "lieu_deces": {
+                                            "nom": null,
+                                            "gps": null
+                                        },
+                                        "photo": null
+                                    },
+                                    "photo": null
+                                },
+                                {
+                                    "id": 112,
+                                    "prenom": "Roger",
+                                    "nom": "Peyrebrune",
+                                    "naissance": "2025-09-20",
+                                    "lieu_naissance": {
+                                        "nom": "Froidefond-Bas",
+                                        "gps": "45.1109, 1.4396"
+                                    },
+                                    "deces": "2025-09-19",
+                                    "lieu_deces": {
+                                        "nom": "Brive-la-Gaillarde",
+                                        "gps": null
+                                    },
+                                    "profession": "Ouvrier",
+                                    "evenement": null,
+                                    "infos": null,
+                                    "children": [
+                                        {
+                                            "id": 123,
+                                            "prenom": "Laurent",
+                                            "nom": "Marchat",
+                                            "naissance": "1967-08-19",
+                                            "lieu_naissance": {
+                                                "nom": "Brive-la-Gaillarde",
+                                                "gps": "45.1585, 1.5332"
+                                            },
+                                            "deces": "2025-09-03",
+                                            "lieu_deces": {
+                                                "nom": "Aubazines",
+                                                "gps": "45.1872, 1.6877"
+                                            },
+                                            "profession": "Mécanicien",
+                                            "evenement": null,
+                                            "infos": null,
+                                            "children": [
+                                                {
+                                                    "id": 147,
+                                                    "prenom": "Yohan",
+                                                    "nom": "",
+                                                    "naissance": "1984-07-27",
+                                                    "lieu_naissance": {
+                                                        "nom": "Froidefond-Bas",
+                                                        "gps": "45.1109, 1.4396"
+                                                    },
+                                                    "deces": null,
+                                                    "lieu_deces": {
+                                                        "nom": null,
+                                                        "gps": null
+                                                    },
+                                                    "profession": null,
+                                                    "evenement": null,
+                                                    "infos": null,
+                                                    "children": [
+                                                        {
+                                                            "id": 152,
+                                                            "prenom": "Enfant 1",
+                                                            "nom": "",
+                                                            "naissance": null,
+                                                            "lieu_naissance": {
+                                                                "nom": null,
+                                                                "gps": null
+                                                            },
+                                                            "deces": null,
+                                                            "lieu_deces": {
+                                                                "nom": null,
+                                                                "gps": null
+                                                            },
+                                                            "profession": null,
+                                                            "evenement": null,
+                                                            "infos": null,
+                                                            "children": [],
+                                                            "spouse": null,
+                                                            "photo": null
+                                                        }
+                                                    ],
+                                                    "spouse": null,
+                                                    "photo": "1757524712724.png"
+                                                },
+                                                {
+                                                    "id": 144,
+                                                    "prenom": "Romain",
+                                                    "nom": "Marchat",
+                                                    "naissance": "1990-02-23",
+                                                    "lieu_naissance": {
+                                                        "nom": null,
+                                                        "gps": null
+                                                    },
+                                                    "deces": null,
+                                                    "lieu_deces": {
+                                                        "nom": null,
+                                                        "gps": null
+                                                    },
+                                                    "profession": null,
+                                                    "evenement": null,
+                                                    "infos": null,
+                                                    "children": [],
+                                                    "spouse": null,
+                                                    "photo": "1757524442608.png"
+                                                },
+                                                {
+                                                    "id": 146,
+                                                    "prenom": "Benjamin",
+                                                    "nom": "Marchat",
+                                                    "naissance": "1991-12-05",
+                                                    "lieu_naissance": {
+                                                        "nom": null,
+                                                        "gps": null
+                                                    },
+                                                    "deces": null,
+                                                    "lieu_deces": {
+                                                        "nom": null,
+                                                        "gps": null
+                                                    },
+                                                    "profession": null,
+                                                    "evenement": null,
+                                                    "infos": null,
+                                                    "children": [],
+                                                    "spouse": null,
+                                                    "photo": "1757524302061.png"
+                                                },
+                                                {
+                                                    "id": 145,
+                                                    "prenom": "Manon",
+                                                    "nom": "Marchat",
+                                                    "naissance": null,
+                                                    "lieu_naissance": {
+                                                        "nom": null,
+                                                        "gps": null
+                                                    },
+                                                    "deces": null,
+                                                    "lieu_deces": {
+                                                        "nom": null,
+                                                        "gps": null
+                                                    },
+                                                    "profession": null,
+                                                    "evenement": null,
+                                                    "infos": null,
+                                                    "children": [
+                                                        {
+                                                            "id": 151,
+                                                            "prenom": "Enfant 1",
+                                                            "nom": "",
+                                                            "naissance": null,
+                                                            "lieu_naissance": {
+                                                                "nom": null,
+                                                                "gps": null
+                                                            },
+                                                            "deces": null,
+                                                            "lieu_deces": {
+                                                                "nom": null,
+                                                                "gps": null
+                                                            },
+                                                            "profession": null,
+                                                            "evenement": null,
+                                                            "infos": null,
+                                                            "children": [],
+                                                            "spouse": null,
+                                                            "photo": null
+                                                        },
+                                                        {
+                                                            "id": 153,
+                                                            "prenom": "Enfant 2",
+                                                            "nom": "",
+                                                            "naissance": null,
+                                                            "lieu_naissance": {
+                                                                "nom": null,
+                                                                "gps": null
+                                                            },
+                                                            "deces": null,
+                                                            "lieu_deces": {
+                                                                "nom": null,
+                                                                "gps": null
+                                                            },
+                                                            "profession": null,
+                                                            "evenement": null,
+                                                            "infos": null,
+                                                            "children": [],
+                                                            "spouse": null,
+                                                            "photo": null
+                                                        }
+                                                    ],
+                                                    "spouse": null,
+                                                    "photo": null
+                                                }
+                                            ],
+                                            "spouse": {
+                                                "id": 173,
+                                                "prenom": "Muriel",
+                                                "nom": "Peyrebrune",
+                                                "naissance": "1965-05-31",
+                                                "deces": null,
+                                                "profession": "Aide soignante",
+                                                "evenement": null,
+                                                "infos": null,
+                                                "lieu_naissance": {
+                                                    "nom": "Brive-la-Gaillarde",
+                                                    "gps": "45.1585, 1.5332"
+                                                },
+                                                "lieu_deces": {
+                                                    "nom": null,
+                                                    "gps": null
+                                                },
+                                                "photo": null
+                                            },
+                                            "photo": null
+                                        }
+                                    ],
+                                    "spouse": {
+                                        "id": 171,
+                                        "prenom": "Paulette ",
+                                        "nom": "Gaut",
+                                        "naissance": "2025-09-10",
+                                        "deces": null,
+                                        "profession": "Femme de ménage",
                                         "evenement": null,
                                         "infos": null,
                                         "lieu_naissance": {
@@ -885,8 +933,8 @@
                                             "gps": "45.1585, 1.5332"
                                         },
                                         "lieu_deces": {
-                                            "nom": "Aubazines",
-                                            "gps": "45.1872, 1.6877"
+                                            "nom": null,
+                                            "gps": null
                                         },
                                         "photo": null
                                     },
@@ -894,21 +942,21 @@
                                 }
                             ],
                             "spouse": {
-                                "id": 171,
-                                "prenom": "Paulette ",
-                                "nom": "Gaut",
-                                "naissance": "2025-09-10",
-                                "deces": null,
-                                "profession": "Femme de ménage",
+                                "id": 167,
+                                "prenom": "Régine Clémence",
+                                "nom": "Chambaret",
+                                "naissance": "2025-09-05",
+                                "deces": "2025-09-24",
+                                "profession": null,
                                 "evenement": null,
-                                "infos": null,
+                                "infos": "Fille légitime de M. Clément Chambaret et de Dame Cavée Vernéjoux.",
                                 "lieu_naissance": {
-                                    "nom": "Brive-la-Gaillarde",
-                                    "gps": "45.1585, 1.5332"
+                                    "nom": "Saint-Viance",
+                                    "gps": "45.2176, 1.4522"
                                 },
                                 "lieu_deces": {
-                                    "nom": null,
-                                    "gps": null
+                                    "nom": "Brive-la-Gaillarde",
+                                    "gps": "45.2433, 1.4568"
                                 },
                                 "photo": null
                             },
@@ -916,21 +964,21 @@
                         }
                     ],
                     "spouse": {
-                        "id": 167,
-                        "prenom": "Régine Clémence",
-                        "nom": "Chambaret",
-                        "naissance": "2025-09-05",
-                        "deces": "2025-09-24",
-                        "profession": null,
+                        "id": 166,
+                        "prenom": "Adrienne",
+                        "nom": " Verlhac",
+                        "naissance": "2025-09-25",
+                        "deces": "1928-05-06",
+                        "profession": "Femme au foyer",
                         "evenement": null,
-                        "infos": "Fille légitime de M. Clément Chambaret et de Dame Cavée Vernéjoux.",
+                        "infos": null,
                         "lieu_naissance": {
-                            "nom": "Saint-Viance",
-                            "gps": "45.2176, 1.4522"
+                            "nom": null,
+                            "gps": null
                         },
                         "lieu_deces": {
-                            "nom": "Brive-la-Gaillarde",
-                            "gps": "45.2433, 1.4568"
+                            "nom": "Froidefond-Bas",
+                            "gps": "45.1109, 1.4396"
                         },
                         "photo": null
                     },
@@ -938,58 +986,43 @@
                 }
             ],
             "spouse": {
-                "id": 166,
-                "prenom": "Adrienne",
-                "nom": " Verlhac",
-                "naissance": "2025-09-25",
-                "deces": "1928-05-06",
-                "profession": "Femme au foyer",
-                "evenement": null,
+                "id": 131,
+                "prenom": "Marie",
+                "nom": "Tldkf,f",
+                "naissance": null,
+                "deces": null,
+                "profession": null,
                 "infos": null,
                 "lieu_naissance": {
                     "nom": null,
                     "gps": null
                 },
                 "lieu_deces": {
-                    "nom": "Froidefond-Bas",
-                    "gps": "45.1109, 1.4396"
+                    "nom": null,
+                    "gps": null
                 },
+                "evenement": null,
                 "photo": null
             },
+            "naissance": null,
+            "deces": null,
+            "profession": null,
+            "infos": null,
+            "lieu_naissance": {
+                "nom": "Lissac-sur-Couze",
+                "gps": "45.1030, 1.4610"
+            },
+            "lieu_deces": {
+                "nom": null,
+                "gps": null
+            },
+            "evenement": null,
             "photo": null
         }
     ],
     "spouse": {
-        "id": 131,
+        "id": 181,
         "prenom": "Marie",
-        "nom": "Tldkf,f",
-        "naissance": null,
-        "deces": null,
-        "profession": null,
-        "infos": null,
-        "lieu_naissance": {
-            "nom": null,
-            "gps": null
-        },
-        "lieu_deces": {
-            "nom": null,
-            "gps": null
-        },
-        "evenement": null,
-        "photo": null
-    },
-    "naissance": null,
-    "deces": null,
-    "profession": null,
-    "infos": null,
-    "lieu_naissance": {
-        "nom": "Lissac-sur-Couze",
-        "gps": "45.1030, 1.4610"
-    },
-    "lieu_deces": {
-        "nom": null,
-        "gps": null
-    },
-    "evenement": null,
-    "photo": null
+        "nom": ""
+    }
 }
