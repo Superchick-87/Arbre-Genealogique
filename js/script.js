@@ -8,7 +8,7 @@ let hideTooltipTimeout = null;
 let i = 0;
 const duration = 750;
 
-const nodeWidth = 220,
+const nodeWidth = 220, // <-- MODIFIÉ ICI pour réduire l'espacement horizontal
   nodeHeight = 90;
 const verticalSpacing = 180;
 
@@ -29,7 +29,8 @@ svg.call(zoomBehavior);
 const tooltip = d3.select("#tooltip");
 const modal = document.getElementById("familyModal");
 
-const treeLayout = d3.tree().nodeSize([nodeWidth + 40, verticalSpacing]);
+// réduction de l'espace vide entre les boîtes enfants
+const treeLayout = d3.tree().nodeSize([nodeWidth + 10, verticalSpacing]);
 
 fetch("./datas/datas.json", { cache: "no-cache" })
   .then((res) => res.json())
@@ -114,13 +115,37 @@ function update(source) {
     .attr("cy", -nodeHeight / 2)
     .call(dragHandler);
 
-  const editHandle = nodeEnter
+  const deleteHandle = nodeEnter
     .append("g")
-    .attr("class", "edit-handle")
+    .attr("class", "delete-root-handle")
     .attr(
       "transform",
       `translate(${nodeWidth / 2 - 16}, ${-nodeHeight / 2 + 16})`
     )
+    .on("click", (event, d) => {
+      event.stopPropagation();
+      if (
+        confirm(
+          "Voulez-vous vraiment supprimer cette boîte et promouvoir son unique enfant ?"
+        )
+      ) {
+        deleteRootAndPromoteChild(d);
+      }
+    });
+
+  deleteHandle.append("circle").attr("class", "delete-handle-bg").attr("r", 10);
+  deleteHandle
+    .append("path")
+    .attr("class", "delete-handle-icon")
+    .attr(
+      "d",
+      "M9,3V4H4V6H5V19C5,20.1 5.9,21 7,21H17C18.1,21 19,20.1 19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z"
+    )
+    .attr("transform", "translate(-12, -12) scale(0.8)");
+
+  const editHandle = nodeEnter
+    .append("g")
+    .attr("class", "edit-handle")
     .on("click", (event, d) => {
       event.stopPropagation();
       openModal(d.data);
@@ -199,6 +224,26 @@ function update(source) {
         .y((n) => n.y)({ source: o, target: o });
     })
     .remove();
+
+  nodeUpdate.select(".delete-root-handle").style("display", (d) => {
+    const isRoot = d.parent === null;
+    const hasOneChild = d.children && d.children.length === 1 && !d._children;
+    return isRoot && hasOneChild ? "block" : "none";
+  });
+
+  nodeUpdate.select(".edit-handle").attr("transform", (d) => {
+    const isRoot = d.parent === null;
+    const hasOneChild = d.children && d.children.length === 1 && !d._children;
+    const trashCanIsVisible = isRoot && hasOneChild;
+
+    if (trashCanIsVisible) {
+      return `translate(${nodeWidth / 2 - 16 - 20 - 4}, ${
+        -nodeHeight / 2 + 16
+      })`;
+    } else {
+      return `translate(${nodeWidth / 2 - 16}, ${-nodeHeight / 2 + 16})`;
+    }
+  });
 
   nodeUpdate.each(function (d) {
     const node = d3.select(this);
@@ -343,7 +388,6 @@ function openModal(nodeData) {
     null === parentNode ? "block" : "none";
   document.getElementById("add_parents_section").style.display = "none";
 
-  // Remplissage des champs pour Parent 1
   [
     "prenom",
     "nom",
@@ -370,7 +414,6 @@ function openModal(nodeData) {
   document.getElementById("modal_p1_photo").dataset.currentPhoto =
     nodeData.photo || "";
 
-  // Remplissage des champs pour Parent 2
   const p2 = nodeData.spouse || {};
   [
     "prenom",
@@ -398,10 +441,8 @@ function openModal(nodeData) {
   document.getElementById("modal_p2_photo").dataset.currentPhoto =
     p2.photo || "";
 
-  // Remplissage de la liste des enfants
   const childrenListDiv = document.getElementById("modal_children_list");
   childrenListDiv.innerHTML = "";
-  // Gère les enfants visibles et cachés (pliés)
   const childrenToShow =
     nodeData.children ||
     (nodeData._children ? nodeData._children.map((d) => d.data) : null);
@@ -414,7 +455,6 @@ function openModal(nodeData) {
   modal.style.display = "block";
   initAllAutocompletes();
 
-  // Initialisation du glisser-déposer
   if (sortableChildren) {
     sortableChildren.destroy();
   }
@@ -668,11 +708,16 @@ function saveAllChangesFromModal() {
       }
       newChildrenArray.push(childData);
     });
-  nodeInCopy.children = newChildrenArray.length > 0 ? newChildrenArray : null;
-  // Conserver les enfants cachés s'il n'y en avait pas dans le modal
-  if (newChildrenArray.length === 0 && currentNodeForModal._children) {
-    delete nodeInCopy.children;
+
+  if (newChildrenArray.length > 0) {
+    nodeInCopy.children = newChildrenArray;
+    delete nodeInCopy._children;
+  } else if (currentNodeForModal._children) {
     nodeInCopy._children = currentNodeForModal._children;
+    delete nodeInCopy.children;
+  } else {
+    nodeInCopy.children = null;
+    delete nodeInCopy._children;
   }
 
   formData.append("jsonData", JSON.stringify(dataToSave));
@@ -699,6 +744,41 @@ function saveAllChangesFromModal() {
     .catch((error) => console.error("Erreur de sauvegarde:", error));
 }
 
+function deleteRootAndPromoteChild(rootNode) {
+  const isRoot = rootNode.parent === null;
+  const hasOneChild =
+    rootNode.children && rootNode.children.length === 1 && !rootNode._children;
+
+  if (isRoot && hasOneChild) {
+    data = rootNode.children[0].data;
+    saveDataToServer(data);
+    root = d3.hierarchy(data, (d) => d.children);
+    root.x0 = window.innerWidth / 2;
+    root.y0 = 50;
+    update(root);
+    setTimeout(centerAndFitTree, duration + 50);
+  } else {
+    alert(
+      "La suppression n'est possible que pour le nœud racine ayant un seul enfant."
+    );
+  }
+}
+
+function saveDataToServer(dataObject) {
+  const formData = new FormData();
+  formData.append("jsonData", JSON.stringify(dataObject));
+
+  fetch("save.php", {
+    method: "POST",
+    body: formData,
+  })
+    .then((res) => res.json())
+    .then((response) => {
+      console.log("Sauvegarde:", response.message);
+    })
+    .catch((error) => console.error("Erreur de sauvegarde:", error));
+}
+
 function toggleAddParentsSection() {
   const section = document.getElementById("add_parents_section");
   section.style.display = section.style.display === "none" ? "block" : "none";
@@ -712,20 +792,33 @@ function addParentsToCurrentNode() {
     alert("Le prénom ou le nom du Parent 1 est requis.");
     return;
   }
-  const newParentNode = {
-    id: nextId++,
-    prenom: p1prenom,
-    nom: p1nom,
-    children: [currentNodeForModal],
-  };
+
+  const createNewPerson = (id, prenom, nom) => ({
+    id: id,
+    prenom: prenom,
+    nom: nom,
+    naissance: null,
+    deces: null,
+    profession: null,
+    evenement: null,
+    infos: null,
+    photo: null,
+    lieu_naissance: { nom: null, gps: null },
+    lieu_deces: { nom: null, gps: null },
+    children: [],
+    spouse: null,
+  });
+
+  const newParentNode = createNewPerson(nextId++, p1prenom, p1nom);
+  newParentNode.children = [currentNodeForModal];
+
   const p2prenom = document.getElementById("new_parent2_prenom").value;
-  if (p2prenom) {
-    newParentNode.spouse = {
-      id: nextId++,
-      prenom: p2prenom,
-      nom: document.getElementById("new_parent2_nom").value || p1nom,
-    };
+  const p2nom = document.getElementById("new_parent2_nom").value;
+
+  if (p2prenom || p2nom) {
+    newParentNode.spouse = createNewPerson(nextId++, p2prenom, p2nom || p1nom);
   }
+
   data = newParentNode;
   closeModal();
   root = d3.hierarchy(data, (d) => d.children);
@@ -733,9 +826,7 @@ function addParentsToCurrentNode() {
   root.y0 = 0;
   update(root);
 
-  const formData = new FormData();
-  formData.append("jsonData", JSON.stringify(data));
-  fetch("save.php", { method: "POST", body: formData });
+  saveDataToServer(data);
 }
 
 function closeModal() {
@@ -1027,9 +1118,9 @@ function getModalHtml() {
                     Infos: <input type="text" id="modal_p2_infos">
                 </fieldset>
             </div>
-          <button type="button" class="swap-button" title="Intervertir Parent 1 et 2" onclick="swapParentData()">
-              &#x21C6; 
-          </button>
+            <button type="button" class="swap-button" title="Intervertir Parent 1 et 2" onclick="swapParentData()">
+                &#x21C6;
+            </button>
         </div>
 
         <hr>

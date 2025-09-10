@@ -408,3 +408,25 @@ body {
   background-color: #e0e0e0;
   transform: translate(-50%, -50%) scale(1.1);
 }
+
+/* Style pour le bouton de suppression du noeud racine */
+.delete-root-handle {
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s;
+  display: none; /* Caché par défaut, sa visibilité est gérée par JavaScript */
+}
+.node:hover .delete-root-handle {
+  opacity: 1;
+}
+.delete-handle-bg {
+  fill: #fff;
+  stroke: var(--border-color);
+}
+.delete-root-handle:hover .delete-handle-bg {
+  fill: #ffebee; /* Un fond rouge clair au survol */
+}
+.delete-handle-icon {
+  fill: #c0392b; /* Une couleur rouge pour l'icône */
+  pointer-events: none;
+}
