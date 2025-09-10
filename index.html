@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Arbre généalogique interactif</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.7/dist/css/autoComplete.min.css"
+    />
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.7/dist/autoComplete.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  </head>
+  <body>
+    <div id="tree-container"></div>
+    <div id="tooltip" class="tooltip">
+      <div id="tooltip-details"></div>
+      <div id="tooltip-map-container"></div>
+    </div>
+    <div id="familyModal" class="modal"></div>
+
+    <div class="action-buttons">
+      <button id="recenter-btn" onclick="centerAndFitTree()">
+        Recentrer l'arbre
+      </button>
+      <button id="show-global-map-btn" onclick="showGlobalMap()">
+        Voir la carte globale
+      </button>
+    </div>
+    <div id="global-map-modal" class="map-modal">
+      <div class="map-modal-content">
+        <span class="map-close" onclick="hideGlobalMap()">&times;</span>
+        <div id="global-map-container"></div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
+  </body>
+</html>

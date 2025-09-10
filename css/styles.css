@@ -1,0 +1,378 @@
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: auto;
+  animation: fadeIn 0.3s;
+}
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 25px;
+  border: 1px solid var(--border-color);
+  width: 90%;
+  max-width: 900px;
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+.modal-close {
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.modal h2 {
+  margin-top: 0;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+.modal-parents-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.modal input {
+  width: 95%;
+  padding: 6px;
+  margin-bottom: 8px;
+}
+.location-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 5px;
+  align-items: center;
+}
+.location-grid input[placeholder="GPS lat,lon"] {
+  display: none;
+}
+.child-item {
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+}
+.child-item.sortable-ghost {
+  background-color: #f0f8ff;
+  opacity: 0.8;
+}
+.child-header {
+  display: flex;
+  align-items: center;
+  cursor: move;
+}
+.child-header span {
+  flex-grow: 1;
+  font-weight: bold;
+}
+.child-details {
+  display: none;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #f8f8f8;
+  border-radius: 4px;
+}
+.modal-footer {
+  margin-top: 20px;
+  text-align: right;
+}
+.modal-section {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #ddd;
+}
+
+/* --- STYLES POUR LES PHOTOS DANS LE MODAL --- */
+.photo-uploader {
+  margin-bottom: 10px;
+  text-align: center;
+}
+.photo-preview {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ccc;
+  display: block;
+  margin: 0 auto 10px auto;
+}
+.photo-uploader input[type="file"] {
+  width: 100%;
+  font-size: 12px;
+}
+
+:root {
+  --primary-color: #4a90e2;
+  --border-color: #333;
+  --shadow-color: rgba(0, 0, 0, 0.05);
+  --background-color: #e0e0e0;
+  --text-color: #333;
+  --handle-color: #5d646d;
+}
+
+body {
+  font-family: "Noto Sans", Arial, sans-serif;
+  margin: 0;
+  background-color: var(--background-color);
+  overflow: hidden;
+  color: var(--text-color);
+}
+#tree-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.node rect {
+  fill: #fff;
+  stroke: var(--primary-color);
+  stroke-width: 1.5px;
+  rx: 8px;
+  height: 90px; /* Hauteur originale restaurée */
+  cursor: pointer;
+  box-shadow: 0 4px 8px var(--shadow-color);
+  transition: box-shadow 0.2s;
+}
+.node:hover > rect {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+.node.collapsed > rect {
+  stroke: #ccc;
+}
+.node.has-children > rect {
+  stroke-dasharray: 4;
+}
+
+.link {
+  fill: none;
+  stroke: var(--border-color);
+  stroke-width: 2px;
+}
+
+.drag-handle {
+  fill: var(--handle-color);
+  stroke: white;
+  stroke-width: 2px;
+  cursor: move;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.node:hover .drag-handle {
+  opacity: 1;
+}
+
+.edit-handle {
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.node:hover .edit-handle {
+  opacity: 1;
+}
+.edit-handle-bg {
+  fill: #fff;
+  stroke: var(--border-color);
+}
+.edit-handle:hover .edit-handle-bg {
+  fill: #f0f0f0;
+}
+.edit-handle-icon {
+  fill: var(--handle-color);
+  pointer-events: none;
+}
+
+.node-html-content {
+  padding: 5px;
+  height: 100%;
+  pointer-events: none;
+}
+.spouse-separator {
+  border: none;
+  border-top: 1px solid #f0f0f0;
+  margin: 2px 0;
+}
+
+/* --- STYLES POUR L'AFFICHAGE DANS L'ARBRE (version compacte) --- */
+.person-container {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 5px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.person-photo {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #ddd;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+.person-details {
+  text-align: left;
+  font-size: 11px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.person-details .name {
+  font-weight: bold;
+}
+.person-details .life-years {
+  font-style: italic;
+  color: #777;
+}
+
+.tooltip {
+  position: absolute;
+  display: none;
+  background-color: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 4px 12px var(--shadow-color);
+  z-index: 1001;
+  pointer-events: auto;
+  width: 280px;
+  line-height: 1.6;
+}
+
+/* --- STYLES POUR LA TOOLTIP ENRICHIE (avec centrage) --- */
+.tooltip-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 8px;
+  text-align: center;
+}
+.tooltip-photo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--primary-color);
+  margin-bottom: 10px;
+  flex-shrink: 0;
+}
+.tooltip-names .name {
+  font-weight: bold;
+  font-size: 1.3em;
+  line-height: 1.2;
+}
+.tooltip-names .life-years {
+  font-style: italic;
+  color: #777;
+  font-size: 1.1em;
+  line-height: 1.2;
+}
+#tooltip-details {
+  padding-top: 8px;
+  margin-top: 8px;
+  border-top: 1px solid #f0f0f0;
+  font-size: 12px;
+  text-align: left;
+}
+#tooltip-map-container {
+  width: 100%;
+  height: 150px;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  margin-top: 10px;
+}
+
+/* --- CORRECTIONS AUTOCOMPLÉTION --- */
+.autoComplete_wrapper {
+  position: relative;
+}
+.autoComplete_wrapper .autoComplete_results_list {
+  z-index: 1005;
+}
+.autoComplete_wrapper > input.autocomplete-location {
+  padding-left: 45px !important;
+}
+
+.action-buttons {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 999;
+}
+.action-buttons button {
+  margin-left: 10px;
+  padding: 8px 16px;
+  background-color: white;
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 4px var(--shadow-color);
+}
+.action-buttons button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.map-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1003;
+  animation: fadeIn 0.3s;
+}
+.map-modal-content {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  height: 90vh;
+  max-width: 1200px;
+  max-height: 800px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+.map-close {
+  color: #333;
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  font-size: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1004;
+  background-color: white;
+  width: 32px;
+  height: 32px;
+  text-align: center;
+  line-height: 32px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px var(--shadow-color);
+}
+#global-map-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
