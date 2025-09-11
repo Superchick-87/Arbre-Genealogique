@@ -6,7 +6,7 @@ let globalMap = null;
 let tooltipMap = null;
 let hideTooltipTimeout = null;
 let i = 0;
-const duration = 750;
+const duration = 1200;
 
 const nodeWidth = 220, // <-- MODIFIÉ ICI pour réduire l'espacement horizontal
   nodeHeight = 90;
@@ -30,7 +30,7 @@ const tooltip = d3.select("#tooltip");
 const modal = document.getElementById("familyModal");
 
 // réduction de l'espace vide entre les boîtes enfants
-const treeLayout = d3.tree().nodeSize([nodeWidth + 10, verticalSpacing]);
+const treeLayout = d3.tree().nodeSize([nodeWidth + 15, verticalSpacing]);
 
 fetch("./datas/datas.json", { cache: "no-cache" })
   .then((res) => res.json())

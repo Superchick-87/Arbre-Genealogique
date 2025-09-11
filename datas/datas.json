@@ -355,12 +355,12 @@
                             "children": [
                                 {
                                     "id": 135,
-                                    "prenom": "Enfant 1",
-                                    "nom": "Pouget",
+                                    "prenom": "Maxime",
+                                    "nom": "Bourdet",
                                     "naissance": null,
                                     "lieu_naissance": {
-                                        "nom": null,
-                                        "gps": null
+                                        "nom": "Châteauroux",
+                                        "gps": "46.8204, 1.6771"
                                     },
                                     "deces": null,
                                     "lieu_deces": {
@@ -370,9 +370,8 @@
                                     "profession": null,
                                     "evenement": null,
                                     "infos": null,
-                                    "children": [],
-                                    "spouse": null,
-                                    "photo": null
+                                    "children": null,
+                                    "photo": "1757548947247.png"
                                 },
                                 {
                                     "id": 136,
@@ -582,12 +581,12 @@
                     "id": 111,
                     "prenom": "René",
                     "nom": "Peyrebrune",
-                    "naissance": "2025-10-02",
+                    "naissance": "1935-10-02",
                     "lieu_naissance": {
                         "nom": "Froidefond-Bas",
                         "gps": "45.1109, 1.4396"
                     },
-                    "deces": "2025-10-05",
+                    "deces": "1995-03-12",
                     "lieu_deces": {
                         "nom": "Froidefond-Bas",
                         "gps": "45.1109, 1.4396"
@@ -636,6 +635,25 @@
                                     "photo": null
                                 }
                             ],
+                            "spouse": {
+                                "id": 177,
+                                "prenom": "--",
+                                "nom": "--",
+                                "naissance": null,
+                                "deces": null,
+                                "profession": null,
+                                "evenement": null,
+                                "infos": null,
+                                "lieu_naissance": {
+                                    "nom": null,
+                                    "gps": null
+                                },
+                                "lieu_deces": {
+                                    "nom": null,
+                                    "gps": null
+                                },
+                                "photo": null
+                            },
                             "photo": null
                         },
                         {
@@ -655,7 +673,8 @@
                             "profession": null,
                             "evenement": null,
                             "infos": null,
-                            "children": null,
+                            "children": [],
+                            "spouse": null,
                             "photo": null
                         },
                         {
@@ -705,12 +724,12 @@
                     "id": 112,
                     "prenom": "Roger",
                     "nom": "Peyrebrune",
-                    "naissance": "2025-09-20",
+                    "naissance": "1940-09-20",
                     "lieu_naissance": {
                         "nom": "Froidefond-Bas",
                         "gps": "45.1109, 1.4396"
                     },
-                    "deces": "2025-09-19",
+                    "deces": "2021-03-30",
                     "lieu_deces": {
                         "nom": "Brive-la-Gaillarde",
                         "gps": null
